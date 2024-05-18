@@ -1,14 +1,15 @@
 import express from "express";
 import dotenv from "dotenv";
+import cors from 'cors'
 import { buildSchema } from "graphql";
 import { graphqlHTTP } from "express-graphql";
-import { mockStockPrices } from "./mockData.js";
+import { mockCompanyInfo, mockHistoricalData, mockStockPrices, mockUserPortfolios } from "./mockData.js";
 
 const app = express();
 dotenv.config({ path: ".env.local" });
 
 const PORT = process.env.PORT || 5000;
-
+app.use(cors())
 app.get("/", (res, req) => {
   res.send("Order History Service is UP");
 });

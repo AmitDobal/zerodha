@@ -1,5 +1,5 @@
 {
-  "name": "order-history-service",
+  "name": "market-data-service",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -15,7 +15,6 @@
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
-    "express-graphql": "^0.12.0",
-    "graphql": "^15.8.0"
+    "upstox-js-sdk": "^2.4.0"
   }
 }
