@@ -1,10 +1,12 @@
 import express from "express";
 import dotenv from "dotenv";
+import cors from "cors";
 import UpstoxClient from "upstox-js-sdk";
 
 dotenv.config({ path: ".env.local" });
 const app = express();
 const PORT = process.env.PORT || 4000;
+app.use(cors());
 
 //STEP 1 - Get the code
 //paste it in your browser to get the AUTH_CODE code
