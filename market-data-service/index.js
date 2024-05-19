@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import UpstoxClient from "upstox-js-sdk";
+import stocksRouter from "./routes/stocks.routes.js";
 
 dotenv.config({ path: ".env.local" });
 const app = express();
@@ -123,6 +124,8 @@ const getHistoricalData = (symbol, callback) => {
     }
   );
 };
+
+app.use("/stocks", stocksRouter);
 
 app.listen(PORT, () => {
   console.log(`\nMarket data service is running on http://localhost:${PORT}`);

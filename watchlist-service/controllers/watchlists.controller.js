@@ -13,7 +13,7 @@ export const getWatchLists = async (req, res) => {
 
 export const addStockToWatchList = async (req, res) => {
   try {
-    console.log("Adding stock to watchlist");
+    console.log("Adding stock to watchlist", req.body);
     const { watchlist, stock } = req.body;
     if (!watchlist) {
       return res.status(400).json({ error: "Watchlist name is required" });
