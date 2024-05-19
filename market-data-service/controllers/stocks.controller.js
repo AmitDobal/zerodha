@@ -33,8 +33,7 @@ const LoadStockData = async (req, res) => {
         console.log("Adding to OpenSearch");
 
         //sending data to opensearch
-        var host =
-          "https://avnadmin:AVNS_H_Lc5kebF6qX8WvSH-k@os-d275431-amit-ef63.e.aivencloud.com:21679";
+        var host = process.env.AIVEN_URI;
         var client = new Client({
           node: host,
         });
@@ -64,12 +63,12 @@ const LoadStockData = async (req, res) => {
     })
     .on("end", async () => {
       console.log("CSV file successfully processed.");
-      res.json({message: "CSV file successfully processed"})
+      res.json({ message: "CSV file successfully processed" });
       // await prisma.$disconnect();
     })
     .on("error", (error) => {
       console.error("Error parsing CSV:", error.message);
-      res.status(400).json({message: "parsing error"})
+      res.status(400).json({ message: "parsing error" });
     });
 };
 
