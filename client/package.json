@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "all": "concurrently \"npm start --prefix ../lambda-search\" \"npm start --prefix ../market-data-service\"  \"npm start --prefix ../order-history-service\"  \"npm start --prefix ../watchlist-service\" \"npm run dev\" "
   },
   "dependencies": {
     "@ant-design/icons": "^5.3.7",
@@ -19,6 +20,7 @@
     "zustand": "^4.5.2"
   },
   "devDependencies": {
+    "concurrently": "^8.2.2",
     "eslint": "^8",
     "eslint-config-next": "14.2.3",
     "postcss": "^8",
