@@ -15,9 +15,7 @@ const searchStocks = ({}) => {
   const { activeWatchList } = useWatchListStore();
 
   const handleSelect = (value) => {
-    console.log("select", value);
     const selectedStock = searchedStocks?.find((stock) => stock._id === value);
-    console.log("SELECTED STOCK", selectedStock);
     addNewStock({
       watchlist: activeWatchList,
       stock: selectedStock?._source?.name,
@@ -29,6 +27,7 @@ const searchStocks = ({}) => {
 
   const handleSearch = async (searchText) => {
     if (searchText?.length > 2) {
+      setValue(searchText);
       setIsSearching(true);
       const stocks = await getSearchedStocks(searchText);
       setIsSearching(false);
@@ -46,9 +45,9 @@ const searchStocks = ({}) => {
       }));
       console.log(stocksName);
       setOptions(stocksName);
+    } else {
+      setValue(searchText);
     }
-
-    setValue(searchText);
   };
 
   const getSearchedStocks = async (searchText) => {

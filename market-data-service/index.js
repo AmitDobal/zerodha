@@ -72,8 +72,8 @@ const getMarketQuoteOHLC = (symbol, callback) => {
     apiVersion,
     (error, data, response) => {
       if (error) {
-        console.error(error);
-        callback(err, null);
+        console.error(error.message);
+        callback(error, null);
       } else {
         console.log(
           "API called successfully. Returned data: " + JSON.stringify(data)

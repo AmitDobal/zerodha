@@ -7,7 +7,7 @@ const app = express();
 
 dotenv.config({ path: ".env.local" });
 const PORT = process.env.PORT || 8090;
-app.use(cors())
+app.use(cors());
 
 // Route for handling search requests
 app.get("/search", async (req, res) => {
@@ -40,7 +40,7 @@ app.get("/search", async (req, res) => {
 
     // Process search results
     const hits = body.hits.hits;
-    console.log(hits);
+    // console.log(hits);
 
     res.status(200).json(hits);
   } catch (error) {

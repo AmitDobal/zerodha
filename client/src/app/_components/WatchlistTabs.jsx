@@ -27,7 +27,9 @@ const WatchlistTabs = ({}) => {
         key: watchlist?.title ?? "",
       };
     });
-    if (watchLists) updateActiveWatchList(watchLists[0]?.title);
+    if (watchLists && !activeKey) {
+      updateActiveWatchList(watchLists[0]?.title);
+    }
     setItems(watch);
   }, [watchLists]);
 

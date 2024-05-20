@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "all": "concurrently \"npm start --prefix ../lambda-search\" \"npm start --prefix ../market-data-service\"  \"npm start --prefix ../order-history-service\"  \"npm start --prefix ../watchlist-service\" \"npm run dev\" "
+    "all": "concurrently \"npm start --prefix ../lambda-search\" \"npm start --prefix ../order-mgr-service\" \"npm start --prefix ../market-data-service\"  \"npm start --prefix ../order-history-service\"  \"npm start --prefix ../watchlist-service\" \"npm start --prefix ../user-mgr-service\" \"npm run dev\" "
   },
   "dependencies": {
     "@ant-design/icons": "^5.3.7",
